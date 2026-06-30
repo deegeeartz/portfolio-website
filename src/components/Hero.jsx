@@ -95,10 +95,14 @@ const Hero = () => {
 
         <div className="hero-visuals reveal active" style={{transitionDelay: '0.4s'}}>
           <div className="headshot-frame animate-float">
-            {/* Image Placeholder - Replace src with actual headshot URL */}
-            <div className="image-placeholder" style={{width: '100%', height: '100%', borderRadius: '18px'}}>
-              <span>[Your Professional Headshot]</span>
-            </div>
+            <img 
+              src="/profile-pic.webp" 
+              alt="Isah Dickson Godstime - Professional Headshot" 
+              style={{width: '100%', height: '100%', borderRadius: '18px', objectFit: 'cover'}}
+              loading="eager"
+              fetchpriority="high"
+              decoding="sync"
+            />
           </div>
           
           <div className="metric-float metric-float-1 glass-panel">

@@ -60,6 +60,7 @@ function App() {
         <meta property="og:title" content="Isah Dickson Godstime - Senior IT Professional" />
         <meta property="og:description" content="Senior IT Professional and Technical Orchestrator specializing in cloud systems and AI solutions." />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://mywebsite-f52e6.web.app/profile-pic.webp" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Navbar theme={theme} toggleTheme={toggleTheme} />

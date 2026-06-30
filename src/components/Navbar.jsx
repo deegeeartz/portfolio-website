@@ -59,9 +59,12 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container container">
-        <a href="#hero" className="navbar-logo" onClick={(e) => handleLinkClick(e, '#hero')}>
-          <span>ID</span>
-          <span className="gradient-text">G</span>
+        <a href="#hero" className="navbar-logo" onClick={(e) => handleLinkClick(e, '#hero')} style={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+          <img src="/profile-thumb.webp" alt="Isah Dickson" style={{width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover'}} loading="lazy" />
+          <div style={{display: 'flex'}}>
+            <span>ID</span>
+            <span className="gradient-text">G</span>
+          </div>
         </a>
 
         {/* Desktop Menu */}

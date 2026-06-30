@@ -141,7 +141,7 @@ const ContactFooter = () => {
             <h3 className="social-title">Connect Professionally</h3>
             <div className="social-icons">
               <a 
-                href="https://www.linkedin.com/in/isah-dickson-godstime-9562bb2b4" 
+                href="https://www.linkedin.com/in/dickson-isah" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-btn linkedin-btn"
@@ -256,7 +256,12 @@ const ContactFooter = () => {
       {/* Copyright Bar */}
       <div className="copyright-bar">
         <div className="container copyright-container" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-          <span className="copyright-logo" style={{fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800}}>ID<span className="gradient-text">G</span></span>
+          <div className="copyright-logo" style={{display: 'flex', alignItems: 'center', gap: '10px', fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800}}>
+            <img src="/profile-thumb.webp" alt="Isah Dickson" style={{width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover'}} loading="lazy" />
+            <div style={{display: 'flex'}}>
+              <span>ID</span><span className="gradient-text">G</span>
+            </div>
+          </div>
           <span className="copyright-text">
             &copy; {new Date().getFullYear()} Isah Dickson Godstime. All Rights Reserved. Built with React.
           </span>
