@@ -7,55 +7,46 @@ const ExperienceTimeline = () => {
       role: "Project Implementation Specialist & AI Solutions Architect",
       company: "Lanzcape",
       location: "Remote, Belgium",
-      period: "Present",
+      period: "Nov 2025 – Present",
       isActive: true,
-      achievements: ["Cloud Infrastructure Setup", "RAG Pipelines deployed"],
-      description: "Architecting international cloud infrastructures and designing RAG pipelines."
+      achievements: ["Cloud Infrastructure Setup", "Hybrid RAG AI Bot deployed", "70% Cost Reduction"],
+      description: "Designing and deploying secure cloud infrastructure and data ingestion pipelines on AWS. Built an AI advisory bot using Perplexity's LLM, GPT, and Hybrid RAG frameworks, resolving critical bottlenecks and reducing infrastructure costs by 70%."
     },
     {
-      role: "Chief Technology Officer",
-      company: "Quonote Digital",
-      location: "Lagos, Nigeria",
-      period: "Recent",
-      isActive: false,
-      achievements: ["AI Consulting", "Tech Budget Management"],
-      description: "Managing technical budgets and directing resource allocation. Overseeing brand standard guides, website performance reviews, and deploying AI consulting software services for corporate clients."
-    },
-    {
-      role: "Digital Sales & IT Transformation Executive",
+      role: "IT & Digital Transformation Executive",
       company: "Goxi Microinsurance",
       location: "Lagos, Nigeria",
-      period: "Previous",
-      isActive: false,
-      achievements: ["1,000+ User Base", "Influencer Strategy Setup"],
-      description: "Leading a multi-phase digital transformation and revenue increase project. Architecting influencer marketing strategies, expanding digital agent recruitment, and maintaining highly stable technology solutions for a 1,000+ user base."
+      period: "Mar 2025 – Present",
+      isActive: true,
+      achievements: ["1,000+ User Base", "25% Faster Onboarding", "NAICOM Compliance"],
+      description: "Managing core infrastructure stability for enterprise digital insurance platforms (99.5% uptime). Leading technical rollouts for automated enrollment and payment APIs, ensuring strict NAICOM and NDPA compliance."
     },
     {
-      role: "Technical Lead",
-      company: "ASMB OOD",
+      role: "Head of Development",
+      company: "ASMB OOD (BespokeAudits)",
       location: "Remote, Morocco",
-      period: "Previous",
-      isActive: false,
-      achievements: ["Scalable Auditing Architecture", "API Integrations"],
-      description: "Directing a 5-person remote engineering team to build scalable auditing architectures and manage API integrations within strict tech budget guidelines."
+      period: "Nov 2023 – Present",
+      isActive: true,
+      achievements: ["40% Faster Delivery", "95% Client Retention", "Remote Team Lead"],
+      description: "Leading a 5-person engineering team to build a scalable hospitality auditing solution. Translating business objectives into Agile roadmaps and overseeing third-party API configurations."
     },
     {
-      role: "ICT Support & Systems Engineer",
+      role: "Founder & Solutions Provider",
+      company: "Quonote Enterprise",
+      location: "Lagos, Nigeria",
+      period: "Jul 2022 – Present",
+      isActive: true,
+      achievements: ["End-to-End Consulting", "Brand Lifecycle Management", "AI Tools Deployment"],
+      description: "Directing tech strategy and providing end-to-end consulting for enterprise clients. Delivering scalable software infrastructure, database configurations, and creating high-impact visual assets."
+    },
+    {
+      role: "ICT Support & Systems Executive",
       company: "The Omar Group",
       location: "Lagos, Nigeria",
-      period: "Previous",
+      period: "Aug 2024 – Mar 2025",
       isActive: false,
-      achievements: ["↓25% Procurement Costs", "↓30% Network Downtime"],
-      description: "Supervised multi-location network stability, managing vendor relationships for equipment installations, reducing procurement costs by 25%, and slashing network downtime by 30%."
-    },
-    {
-      role: "Tech Sales & IT Support Executive",
-      company: "All Access Global Enterprise",
-      location: "Lagos, Nigeria",
-      period: "Previous",
-      isActive: false,
-      achievements: ["100+ Clients Annually", "Workstation Setup"],
-      description: "Providing hands-on workstation setup, tech advisory, and hardware solutions to 100+ business clients annually."
+      achievements: ["↓25% Procurement Costs", "Location API Integration"],
+      description: "Spearheaded the digitization of operational content and engineered secure, location-restricted local networks. Optimized hardware lifecycles and slashed overall procurement costs by 25%."
     }
   ];
 

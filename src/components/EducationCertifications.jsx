@@ -4,7 +4,7 @@ import { GraduationCap, Award, Shield, CheckCircle2 } from 'lucide-react';
 const EducationCertifications = () => {
   const degrees = [
     {
-      title: "M.Sc. Information Technology & Cybersecurity",
+      title: "Master of Information Technology (MIS Specialization)",
       institution: "Miva Open University",
       status: "In Progress",
       color: "accent-primary"
@@ -14,22 +14,16 @@ const EducationCertifications = () => {
       institution: "Lagos State University (LASU)",
       status: "Completed",
       color: "accent-secondary"
-    },
-    {
-      title: "B.A. English Language and Literature",
-      institution: "National Open University of Nigeria (NOUN)",
-      status: "Completed",
-      color: "accent-tertiary"
     }
   ];
 
   const certifications = [
-    { name: "HubSpot SEO Certification", color: "#ff7a59" },
-    { name: "HubSpot Inbound Certification", color: "#ff7a59" },
-    { name: "ITIL v4 Foundation", color: "#00558F" },
-    { name: "Microsoft IT Support Specialist", color: "#00a4ef" },
+    { name: "AWS Certified Solutions Architect – Associate", color: "#FF9900" },
+    { name: "ITIL v4 Foundation Frameworks", color: "#00558F" },
     { name: "CompTIA A+", color: "#ff0000" },
-    { name: "Google IT Support Professional", color: "#4285F4" }
+    { name: "Google IT Support Professional", color: "#4285F4" },
+    { name: "Microsoft IT Support Specialist", color: "#00a4ef" },
+    { name: "HubSpot SEO & Inbound Certifications", color: "#ff7a59" }
   ];
 
   const affiliations = [

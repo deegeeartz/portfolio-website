@@ -24,24 +24,11 @@ const References = () => {
   const references = [
     {
       id: 1,
-      name: "John Doe",
-      title: "CEO at Enterprise Tech",
-      linkedinUrl: "https://linkedin.com/in/johndoe",
-      review: "Isah is an exceptional technical leader. His ability to bridge the gap between business requirements and complex cloud architecture is unmatched. He transformed our entire data pipeline, reducing costs significantly while improving performance."
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      title: "VP of Engineering at Quonote Digital",
-      linkedinUrl: "https://linkedin.com/in/janesmith",
-      review: "Working with Isah was a game-changer for our team. He brings a strategic mindset to every project, ensuring that our AI integrations were not only cutting-edge but also highly scalable and secure. Highly recommended."
-    },
-    {
-      id: 3,
-      name: "Michael Johnson",
-      title: "Director of Operations at Goxi Microinsurance",
-      linkedinUrl: "https://linkedin.com/in/michaeljohnson",
-      review: "Dickson led our digital transformation initiative flawlessly. His expertise in both IT management and inbound growth strategy helped us scale our user base while maintaining robust system stability."
+      name: "Michel Ehrlich",
+      title: "Founder & Operator | Public Affairs & Policy Intelligence",
+      linkedinUrl: "https://www.linkedin.com/in/michel-ehrlich", // Optional fallback link
+      isSpotlight: true,
+      review: "Working with Dickson was one of the best developer experiences I have had. He is extremely competent and up-to-date technically and technologically, he is highly professional in his communications and working style, and - this is important - he thinks *with* the client and sometimes suggests even better solutions or approaches than the client thought of. He delivers high-quality work on time and on budget. I recommend Dickson highly - work with him and you will not regret it."
     }
   ];
 
@@ -57,7 +44,13 @@ const References = () => {
 
         <div className="references-grid">
           {references.map((ref) => (
-            <div key={ref.id} className="reference-card glass-panel">
+            <div key={ref.id} className={`reference-card glass-panel ${ref.isSpotlight ? 'spotlight-card' : ''}`} style={ref.isSpotlight ? { border: '1px solid var(--accent-primary)', boxShadow: '0 10px 30px -10px var(--glow-color)' } : {}}>
+              {ref.isSpotlight && (
+                <div className="hero-badge" style={{marginBottom: '1.5rem', alignSelf: 'flex-start', fontSize: '0.75rem', padding: '0.4rem 0.8rem'}}>
+                  <span className="badge-pulse"></span>
+                  <span>Featured Client Spotlight</span>
+                </div>
+              )}
               <Quote size={32} className="quote-icon" />
               <p className="reference-text">"{ref.review}"</p>
               

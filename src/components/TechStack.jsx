@@ -16,14 +16,14 @@ const TechStack = () => {
       ]
     },
     {
-      title: "Digital Marketing & Inbound",
+      title: "Digital Marketing & Design",
       icon: <TrendingUp className="domain-icon" size={24} />,
       skills: [
         { name: "SEO Optimization", level: "expert" },
         { name: "Inbound Pipelines", level: "expert" },
         { name: "Digital Campaigns", level: "advanced" },
-        { name: "Influencer Strategy", level: "advanced" },
-        { name: "CRM Integrations", level: "expert" }
+        { name: "CRM Integrations", level: "expert" },
+        { name: "Adobe Illustrator", level: "advanced" }
       ]
     },
     {
@@ -53,8 +53,8 @@ const TechStack = () => {
       icon: <Code className="domain-icon" size={24} />,
       skills: [
         { name: "Python", level: "expert" },
-        { name: "JavaScript/TypeScript", level: "advanced" },
-        { name: "React.js", level: "advanced" },
+        { name: "JavaScript/React.js", level: "advanced" },
+        { name: "SQL/PostgreSQL", level: "advanced" },
         { name: "REST/GraphQL APIs", level: "expert" }
       ]
     }

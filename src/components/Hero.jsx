@@ -4,8 +4,11 @@ import { ArrowRight, Download, Briefcase, TrendingUp, Users } from 'lucide-react
 const Hero = () => {
   const titles = [
     "Chief Technology Officer",
+    "Senior IT Professional",
+    "Technical Orchestrator",
     "AI Solutions Architect",
-    "IT Management & Digital Strategist"
+    "IT Management & Digital Strategist",
+    "Founder & Solutions Provider"
   ];
   
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
@@ -81,9 +84,7 @@ const Hero = () => {
           </div>
           
           <p className="hero-description reveal active" style={{transitionDelay: '0.2s'}}>
-            Bridging the gap between high-level business strategy, technical execution, and digital growth. 
-            I architect production-grade AI pipelines, deploy highly optimized multi-cloud infrastructure, 
-            and lead cross-functional IT and digital marketing teams to scale enterprise revenue and brand visibility.
+            Senior IT Professional and Technical Orchestrator with 5+ years of experience building secure, high-availability cloud systems, API frameworks, and enterprise digital insurance platforms. Expert at collaborating with executives to align technical roadmaps with core business growth and deploying custom AI (Hybrid RAG) pipelines.
           </p>
           
           <div className="hero-actions reveal active" style={{transitionDelay: '0.3s'}}>
