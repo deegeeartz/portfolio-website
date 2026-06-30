@@ -55,10 +55,6 @@ const Hero = () => {
     }
   };
 
-  const handleDownloadResume = () => {
-    alert("Resume download initialized!\n(In a live production deployment, this links to your PDF resume document.)");
-  };
-
   return (
     <section id="hero" className="hero-section">
       <div className="dot-grid-overlay"></div>
@@ -91,9 +87,9 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary" onClick={handleScrollToProjects}>
               View My Work <ArrowRight size={18} />
             </a>
-            <button className="btn btn-secondary" onClick={handleDownloadResume}>
+            <a href="/Isah_Dickson_CV.pdf" download="Isah_Dickson_CV.pdf" className="btn btn-secondary">
               Download Resume <Download size={18} />
-            </button>
+            </a>
           </div>
         </div>
 
