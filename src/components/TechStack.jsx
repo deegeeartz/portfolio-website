@@ -6,67 +6,56 @@ const TechStack = () => {
     {
       title: "IT Management & Leadership",
       icon: <Briefcase className="domain-icon" size={24} />,
-      color: "accent-primary",
       skills: [
-        "Technology Budgeting",
-        "Vendor Management & Negotiation",
-        "Cross-Functional Team Leadership",
-        "Disaster Recovery Planning",
-        "Resource Allocation",
-        "ITIL v4 Service Governance",
-        "Agile Sprint Cadence"
+        { name: "Technology Budgeting", level: "expert" },
+        { name: "Vendor Management", level: "advanced" },
+        { name: "Team Leadership", level: "expert" },
+        { name: "Disaster Recovery", level: "advanced" },
+        { name: "ITIL v4 Governance", level: "expert" },
+        { name: "Agile Sprints", level: "advanced" }
       ]
     },
     {
       title: "Digital Marketing & Inbound",
       icon: <TrendingUp className="domain-icon" size={24} />,
-      color: "accent-secondary",
       skills: [
-        "Search Engine Optimization (SEO)",
-        "Inbound Lead Gen Pipelines",
-        "Data-Driven Digital Campaigns",
-        "Influencer Marketing Strategy",
-        "Brand Standard Lifecycle",
-        "CRM Integrations"
+        { name: "SEO Optimization", level: "expert" },
+        { name: "Inbound Pipelines", level: "expert" },
+        { name: "Digital Campaigns", level: "advanced" },
+        { name: "Influencer Strategy", level: "advanced" },
+        { name: "CRM Integrations", level: "expert" }
       ]
     },
     {
       title: "AI & Data Engineering",
       icon: <Brain className="domain-icon" size={24} />,
-      color: "accent-tertiary",
       skills: [
-        "RAG Architecture",
-        "LLM Orchestration (GPT-4o, Perplexity)",
-        "Prompt Engineering",
-        "ETL Pipelines (Pandas)",
-        "Power BI Reporting",
-        "Advanced Data Visualization"
+        { name: "RAG Architecture", level: "expert" },
+        { name: "LLM Orchestration", level: "expert" },
+        { name: "Prompt Engineering", level: "advanced" },
+        { name: "ETL Pipelines", level: "expert" },
+        { name: "Power BI", level: "advanced" }
       ]
     },
     {
-      title: "Cloud Infrastructure & DevOps",
+      title: "Cloud & DevOps",
       icon: <Cloud className="domain-icon" size={24} />,
-      color: "accent-primary",
       skills: [
-        "AWS (EC2, S3, Lambda, OpenSearch)",
-        "Google Cloud Platform (GCP)",
-        "Firebase Backend",
-        "Docker Containerization",
-        "CI/CD Automated Pipelines",
-        "Linux Server Administration"
+        { name: "AWS Services", level: "expert" },
+        { name: "GCP", level: "advanced" },
+        { name: "Docker", level: "advanced" },
+        { name: "CI/CD Pipelines", level: "advanced" },
+        { name: "Linux Server Admin", level: "expert" }
       ]
     },
     {
       title: "Software Development",
       icon: <Code className="domain-icon" size={24} />,
-      color: "accent-secondary",
       skills: [
-        "Python Scripting",
-        "JavaScript",
-        "TypeScript",
-        "React.js Development",
-        "Tailwind CSS Layouts",
-        "REST & GraphQL API Integration"
+        { name: "Python", level: "expert" },
+        { name: "JavaScript/TypeScript", level: "advanced" },
+        { name: "React.js", level: "advanced" },
+        { name: "REST/GraphQL APIs", level: "expert" }
       ]
     }
   ];
@@ -85,10 +74,10 @@ const TechStack = () => {
           {stackDomains.map((domain, index) => (
             <div 
               key={index} 
-              className={`expertise-card glass-panel border-${domain.color}`}
+              className="expertise-card glass-panel"
             >
               <div className="card-header-wrapper">
-                <div className={`icon-container bg-${domain.color}`}>
+                <div className="icon-container">
                   {domain.icon}
                 </div>
                 <h3 className="expertise-card-title">{domain.title}</h3>
@@ -96,7 +85,18 @@ const TechStack = () => {
               <div className="skills-chips-wrapper">
                 {domain.skills.map((skill, sIdx) => (
                   <span key={sIdx} className="skill-chip">
-                    {skill}
+                    <span 
+                      style={{
+                        width: '8px', 
+                        height: '8px', 
+                        borderRadius: '50%', 
+                        display: 'inline-block',
+                        marginRight: '6px',
+                        backgroundColor: skill.level === 'expert' ? 'var(--accent-secondary)' : 'var(--accent-primary)'
+                      }}
+                      title={skill.level === 'expert' ? 'Expert' : 'Advanced'}
+                    ></span>
+                    {skill.name}
                   </span>
                 ))}
               </div>

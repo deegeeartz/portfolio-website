@@ -12,6 +12,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Projects', href: '#projects', id: 'projects' },
     { name: 'Education', href: '#education', id: 'education' },
+    { name: 'References', href: '#references', id: 'references' },
     { name: 'Contact', href: '#contact', id: 'contact' }
   ];
 

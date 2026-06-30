@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Download, Server, Cpu, BarChart } from 'lucide-react';
+import { ArrowRight, Download, Briefcase, TrendingUp, Users } from 'lucide-react';
 
 const Hero = () => {
   const titles = [
@@ -11,7 +11,6 @@ const Hero = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
 
   useEffect(() => {
     let timer;
@@ -59,6 +58,7 @@ const Hero = () => {
 
   return (
     <section id="hero" className="hero-section">
+      <div className="dot-grid-overlay"></div>
       <div className="glow-dot glow-dot-1"></div>
       <div className="glow-dot glow-dot-2"></div>
       
@@ -66,27 +66,27 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-pulse"></span>
-            <span>Available for Enterprise Consultation & Leadership Roles</span>
+            <span>Available for Enterprise Consultation & Leadership</span>
           </div>
           
-          <h1 className="hero-title">
+          <h1 className="hero-title reveal active">
             Hi, I'm <br />
             <span className="gradient-text">Isah Dickson Godstime</span>
           </h1>
           
-          <div className="hero-subtitle-container">
+          <div className="hero-subtitle-container reveal active" style={{transitionDelay: '0.1s'}}>
             <span className="hero-subtitle-prefix">I am a </span>
-            <span className="hero-subtitle-typed gradient-text">{currentText}</span>
+            <span className="hero-subtitle-typed gradient-text-alt" style={{marginLeft: '8px'}}>{currentText}</span>
             <span className="typing-cursor">|</span>
           </div>
           
-          <p className="hero-description">
+          <p className="hero-description reveal active" style={{transitionDelay: '0.2s'}}>
             Bridging the gap between high-level business strategy, technical execution, and digital growth. 
             I architect production-grade AI pipelines, deploy highly optimized multi-cloud infrastructure, 
             and lead cross-functional IT and digital marketing teams to scale enterprise revenue and brand visibility.
           </p>
           
-          <div className="hero-actions">
+          <div className="hero-actions reveal active" style={{transitionDelay: '0.3s'}}>
             <a href="#projects" className="btn btn-primary" onClick={handleScrollToProjects}>
               View My Work <ArrowRight size={18} />
             </a>
@@ -96,38 +96,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-graphics">
-          <div className="graphics-container animate-float">
-            <div className="tech-orbit-circle">
-              {/* Central AI Nucleus */}
-              <div className="nucleus-glow"></div>
-              <div className="nucleus">
-                <Cpu size={32} className="nucleus-icon" />
-              </div>
-
-              {/* Satellites */}
-              <div className="satellite satellite-cloud">
-                <Server size={18} />
-              </div>
-              <div className="satellite satellite-marketing">
-                <BarChart size={18} />
-              </div>
-
-              {/* Orbiting rings */}
-              <div className="orbit-ring orbit-ring-1"></div>
-              <div className="orbit-ring orbit-ring-2"></div>
-              <div className="orbit-ring orbit-ring-3"></div>
+        <div className="hero-visuals reveal active" style={{transitionDelay: '0.4s'}}>
+          <div className="headshot-frame animate-float">
+            {/* Image Placeholder - Replace src with actual headshot URL */}
+            <div className="image-placeholder" style={{width: '100%', height: '100%', borderRadius: '18px'}}>
+              <span>[Your Professional Headshot]</span>
             </div>
-
-            {/* Glowing Tech Info Badges */}
-            <div className="info-card info-card-1 glass-panel">
-              <span className="info-card-value">80%</span>
-              <span className="info-card-label">Cloud Cost Reduction</span>
-            </div>
-            <div className="info-card info-card-2 glass-panel">
-              <span className="info-card-value">1,000+</span>
-              <span className="info-card-label">Users Supported</span>
-            </div>
+          </div>
+          
+          <div className="metric-float metric-float-1 glass-panel">
+            <span className="metric-val">80%</span>
+            <span className="metric-label">Cloud Cost Reduction</span>
+          </div>
+          
+          <div className="metric-float metric-float-2 glass-panel">
+            <span className="metric-val">1,000+</span>
+            <span className="metric-label">Users Supported</span>
           </div>
         </div>
       </div>

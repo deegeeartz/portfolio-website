@@ -5,6 +5,7 @@ import TechStack from './components/TechStack';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import Projects from './components/Projects';
 import EducationCertifications from './components/EducationCertifications';
+import References from './components/References';
 import ContactFooter from './components/ContactFooter';
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <ExperienceTimeline />
         <Projects />
         <EducationCertifications />
+        <References />
       </main>
       <ContactFooter />
     </div>

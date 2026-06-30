@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Award, Shield, FileCheck, CheckCircle2 } from 'lucide-react';
+import { GraduationCap, Award, Shield, CheckCircle2 } from 'lucide-react';
 
 const EducationCertifications = () => {
   const degrees = [
@@ -24,12 +24,12 @@ const EducationCertifications = () => {
   ];
 
   const certifications = [
-    "HubSpot SEO Certification",
-    "HubSpot Inbound Certification",
-    "ITIL v4 Foundation Frameworks",
-    "Microsoft IT Support Specialist",
-    "CompTIA A+",
-    "Google IT Support Professional"
+    { name: "HubSpot SEO Certification", color: "#ff7a59" },
+    { name: "HubSpot Inbound Certification", color: "#ff7a59" },
+    { name: "ITIL v4 Foundation", color: "#00558F" },
+    { name: "Microsoft IT Support Specialist", color: "#00a4ef" },
+    { name: "CompTIA A+", color: "#ff0000" },
+    { name: "Google IT Support Professional", color: "#4285F4" }
   ];
 
   const affiliations = [
@@ -43,7 +43,7 @@ const EducationCertifications = () => {
         <div className="section-header">
           <h2>Education & Credentials</h2>
           <p>
-            Academic background, recognized certifications, and professional computer science memberships.
+            Academic background, recognized certifications, and professional memberships.
           </p>
         </div>
 
@@ -51,18 +51,23 @@ const EducationCertifications = () => {
           {/* Degrees Column */}
           <div className="degrees-column">
             <h3 className="column-title">
-              <GraduationCap size={22} className="column-title-icon" /> Academic Degrees
+              <GraduationCap size={22} className="column-title-icon" style={{color: 'var(--accent-primary)', marginRight: '8px'}} /> 
+              Academic Degrees
             </h3>
             <div className="degrees-list">
               {degrees.map((deg, idx) => (
-                <div key={idx} className={`degree-card glass-panel border-${deg.color}`}>
-                  <div className="degree-header">
-                    <h4 className="degree-title">{deg.title}</h4>
+                <div key={idx} className="degree-card glass-panel" style={{ borderLeft: `3px solid var(--${deg.color})` }}>
+                  {/* Institution Logo Placeholder */}
+                  <div className="image-placeholder institution-logo">
+                    {deg.institution.charAt(0)}
+                  </div>
+                  <div className="degree-info">
+                    <h4>{deg.title}</h4>
+                    <p>{deg.institution}</p>
                     <span className={`status-badge status-${deg.status.toLowerCase().replace(' ', '-')}`}>
                       {deg.status}
                     </span>
                   </div>
-                  <p className="degree-institution">{deg.institution}</p>
                 </div>
               ))}
             </div>
@@ -70,16 +75,17 @@ const EducationCertifications = () => {
 
           {/* Certifications & Affiliations Column */}
           <div className="credentials-column">
-            {/* Certifications Card */}
-            <div className="credentials-block">
+            {/* Certifications Block */}
+            <div className="credentials-block" style={{ marginBottom: '3rem' }}>
               <h3 className="column-title">
-                <Award size={22} className="column-title-icon" /> Industry Certifications
+                <Award size={22} className="column-title-icon" style={{color: 'var(--accent-secondary)', marginRight: '8px'}} /> 
+                Industry Certifications
               </h3>
-              <div className="certifications-grid glass-panel">
+              <div className="cert-grid">
                 {certifications.map((cert, idx) => (
-                  <div key={idx} className="cert-item">
-                    <CheckCircle2 size={16} className="cert-icon" />
-                    <span>{cert}</span>
+                  <div key={idx} className="cert-card" style={{ borderLeft: `3px solid ${cert.color}` }}>
+                    <CheckCircle2 size={16} style={{ color: cert.color, flexShrink: 0 }} />
+                    <span className="cert-name">{cert.name}</span>
                   </div>
                 ))}
               </div>
@@ -88,13 +94,14 @@ const EducationCertifications = () => {
             {/* Affiliations Block */}
             <div className="credentials-block">
               <h3 className="column-title">
-                <Shield size={22} className="column-title-icon" /> Professional Affiliations
+                <Shield size={22} className="column-title-icon" style={{color: 'var(--accent-tertiary)', marginRight: '8px'}} /> 
+                Professional Affiliations
               </h3>
-              <div className="affiliations-list">
+              <div className="cert-grid">
                 {affiliations.map((aff, idx) => (
-                  <div key={idx} className="affiliation-card glass-panel">
-                    <FileCheck size={18} className="affiliation-icon" />
-                    <span className="affiliation-name">{aff}</span>
+                  <div key={idx} className="cert-card" style={{ borderLeft: '3px solid var(--text-secondary)' }}>
+                    <Shield size={16} style={{ color: 'var(--text-secondary)', flexShrink: 0 }} />
+                    <span className="cert-name">{aff}</span>
                   </div>
                 ))}
               </div>

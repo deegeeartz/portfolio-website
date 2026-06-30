@@ -98,7 +98,7 @@ const ContactFooter = () => {
         
         {/* Contact Info Column */}
         <div className="contact-info-panel">
-          <h2 className="contact-panel-title">Let's Connect</h2>
+          <h2 className="contact-panel-title">Ready to architect something <span className="gradient-text">exceptional?</span></h2>
           <p className="contact-panel-desc">
             Whether you are looking to architect custom AI pipelines, optimize enterprise cloud infrastructures, 
             or scale operational revenues, feel free to reach out. I am open to global remote leadership consulting and advisory engagements.
@@ -138,7 +138,7 @@ const ContactFooter = () => {
 
           {/* Socials Connection */}
           <div className="social-links-container">
-            <h3 className="social-title">Follow & Connect</h3>
+            <h3 className="social-title">Connect Professionally</h3>
             <div className="social-icons">
               <a 
                 href="https://www.linkedin.com/in/isah-dickson-godstime-9562bb2b4" 
@@ -166,21 +166,22 @@ const ContactFooter = () => {
         <div className="contact-form-panel glass-panel">
           {isSuccess ? (
             <div className="form-success-state">
-              <CheckCircle size={56} className="success-icon animate-pulse-fast" />
+              <CheckCircle size={56} className="success-icon animate-pulse-fast" style={{color: 'var(--accent-secondary)'}} />
               <h3>Message Sent Successfully!</h3>
               <p>
                 Thank you for reaching out, Isah Dickson Godstime. I will review your submission and respond shortly.
               </p>
               <button 
-                className="btn btn-secondary" 
+                className="btn btn-primary" 
                 onClick={() => setIsSuccess(false)}
+                style={{marginTop: '1rem'}}
               >
                 Send Another Message
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate>
-              <h3 className="form-title">Send a Message</h3>
+              <h3 className="form-title" style={{marginBottom: '2rem'}}>Send an Inquiry</h3>
               
               <div className="form-group">
                 <label className="form-label" htmlFor="name">Full Name</label>
@@ -197,13 +198,13 @@ const ContactFooter = () => {
               </div>
 
               <div className="form-group">
-                <label className="form-label" htmlFor="email">Email Address</label>
+                <label className="form-label" htmlFor="email">Work Email</label>
                 <input 
                   type="email" 
                   id="email" 
                   name="email" 
                   className={`form-control ${errors.email ? 'input-error' : ''}`}
-                  placeholder="e.g. john@example.com"
+                  placeholder="e.g. john@enterprise.com"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
@@ -217,7 +218,7 @@ const ContactFooter = () => {
                   id="subject" 
                   name="subject" 
                   className={`form-control ${errors.subject ? 'input-error' : ''}`}
-                  placeholder="Inquiry Topic"
+                  placeholder="Consulting Inquiry"
                   value={formData.subject}
                   onChange={handleInputChange}
                 />
@@ -231,7 +232,7 @@ const ContactFooter = () => {
                   name="message" 
                   rows="4" 
                   className={`form-control ${errors.message ? 'input-error' : ''}`}
-                  placeholder="Tell me about your project or inquiry..."
+                  placeholder="Tell me about your project or architecture needs..."
                   value={formData.message}
                   onChange={handleInputChange}
                 />
@@ -242,8 +243,9 @@ const ContactFooter = () => {
                 type="submit" 
                 className="btn btn-primary form-submit-btn"
                 disabled={isSubmitting}
+                style={{width: '100%', marginTop: '1rem', padding: '1rem'}}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "Sending..." : "Submit Inquiry"}
                 <Send size={16} />
               </button>
             </form>
@@ -253,10 +255,10 @@ const ContactFooter = () => {
 
       {/* Copyright Bar */}
       <div className="copyright-bar">
-        <div className="container copyright-container">
-          <span className="copyright-logo">ID<span className="gradient-text">G</span></span>
+        <div className="container copyright-container" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+          <span className="copyright-logo" style={{fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 800}}>ID<span className="gradient-text">G</span></span>
           <span className="copyright-text">
-            &copy; {new Date().getFullYear()} Isah Dickson Godstime. All Rights Reserved. Built with React & Vanilla CSS.
+            &copy; {new Date().getFullYear()} Isah Dickson Godstime. All Rights Reserved. Built with React.
           </span>
         </div>
       </div>
