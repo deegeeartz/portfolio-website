@@ -75,7 +75,7 @@ const Hero = () => {
           
           <div className="hero-subtitle-container reveal" style={{transitionDelay: '0.1s'}}>
             <span className="hero-subtitle-prefix">I am a </span>
-            <span className="hero-subtitle-typed gradient-text-alt" style={{marginLeft: '8px'}}>{currentText}</span>
+            <span className="hero-subtitle-typed gradient-text-alt">{currentText}</span>
             <span className="typing-cursor">|</span>
           </div>
           
@@ -96,7 +96,7 @@ const Hero = () => {
         <div className="hero-visuals reveal" style={{transitionDelay: '0.4s'}}>
           <div className="headshot-frame animate-float">
             <img 
-              src="/profile-pic.webp" 
+              src="/headshot.webp" 
               alt="Isah Dickson Godstime - Professional Headshot" 
               style={{width: '100%', height: '100%', borderRadius: '18px', objectFit: 'cover'}}
               loading="eager"
@@ -106,13 +106,13 @@ const Hero = () => {
           </div>
           
           <div className="metric-float metric-float-1 glass-panel">
-            <span className="metric-val">80%</span>
-            <span className="metric-label">Cloud Cost Reduction</span>
+            <span className="metric-val">10+</span>
+            <span className="metric-label">Enterprise Systems Built</span>
           </div>
           
           <div className="metric-float metric-float-2 glass-panel">
-            <span className="metric-val">1,000+</span>
-            <span className="metric-label">Users Supported</span>
+            <span className="metric-val">99.9%</span>
+            <span className="metric-label">Infrastructure Uptime</span>
           </div>
         </div>
       </div>

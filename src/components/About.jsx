@@ -38,17 +38,28 @@ const About = () => {
             </div>
           </div>
           
-          <div className="about-visual glass-panel" style={{padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)'}}>
-            <h3 style={{fontSize: '2rem', marginBottom: '1.5rem'}}>
-              "He thinks <i className="gradient-text">with</i> the client and suggests even better solutions than the client thought of."
-            </h3>
-            <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem'}}>
-              <div style={{width: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '1.2rem'}}>
-                M
-              </div>
-              <div>
-                <h4 style={{margin: 0}}>Michel Ehrlich</h4>
-                <span style={{fontSize: '0.85rem', color: 'var(--text-muted)'}}>Founder & Operator | Public Affairs & Policy Intelligence</span>
+          <div className="about-visual" style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
+            <div style={{width: '280px', height: '280px', borderRadius: '50%', overflow: 'hidden', border: '3px solid var(--accent-primary)', boxShadow: '0 8px 32px var(--shadow-sm)', margin: '0 auto'}}>
+              <img 
+                src="/about-pic.webp" 
+                alt="Isah Dickson Godstime" 
+                style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', display: 'block'}}
+                loading="lazy"
+              />
+            </div>
+            
+            <div className="glass-panel" style={{padding: '2.5rem', background: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: '18px'}}>
+              <h3 style={{fontSize: '1.6rem', marginBottom: '1.5rem', lineHeight: 1.4}}>
+                "He thinks <i className="gradient-text">with</i> the client and suggests even better solutions than the client thought of."
+              </h3>
+              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '1rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.5rem'}}>
+                <div style={{width: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '1.2rem'}}>
+                  M
+                </div>
+                <div>
+                  <h4 style={{margin: 0}}>Michel Ehrlich</h4>
+                  <span style={{fontSize: '0.85rem', color: 'var(--text-muted)'}}>Founder & Operator | Public Affairs & Policy Intelligence</span>
+                </div>
               </div>
             </div>
           </div>

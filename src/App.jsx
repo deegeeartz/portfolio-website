@@ -10,6 +10,7 @@ import Projects from './components/Projects';
 import EducationCertifications from './components/EducationCertifications';
 import References from './components/References';
 import ContactFooter from './components/ContactFooter';
+import FloatingSkills from './components/FloatingSkills';
 
 function App() {
   // Theme state: dark mode default, persisted in local storage
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
+      <FloatingSkills />
       <Helmet>
         <title>Isah Dickson Godstime - Senior IT Professional & AI Solutions Architect</title>
         <meta name="description" content="Portfolio of Isah Dickson Godstime: Senior IT Professional, AI Solutions Architect, and Technical Orchestrator specializing in cloud infrastructures and digital transformation." />
@@ -62,7 +64,7 @@ function App() {
         <meta property="og:title" content="Isah Dickson Godstime - Senior IT Professional" />
         <meta property="og:description" content="Senior IT Professional and Technical Orchestrator specializing in cloud systems and AI solutions." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://mywebsite-f52e6.web.app/profile-pic.webp" />
+        <meta property="og:image" content="https://dicksonisah.com/headshot.webp" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Navbar theme={theme} toggleTheme={toggleTheme} />

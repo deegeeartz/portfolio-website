@@ -614,7 +614,18 @@ button {
   margin-bottom: 1.5rem;
   min-height: 2.5rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.hero-subtitle-prefix {
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .hero-subtitle-container {
+    font-size: 1.15rem;
+    min-height: 3rem;
+  }
 }
 
 .typing-cursor {

@@ -24,9 +24,9 @@ const StatsBar = () => {
 
   const stats = [
     { value: '5+', label: 'Years Experience' },
+    { value: '10+', label: 'Enterprise Systems Built' },
     { value: '80%', label: 'Cloud Cost Reduction' },
-    { value: '1K+', label: 'Users Supported' },
-    { value: '99.9%', label: 'Uptime SLA' }
+    { value: '99.9%', label: 'Infrastructure Uptime' }
   ];
 
   return (

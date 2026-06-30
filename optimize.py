@@ -23,15 +23,27 @@ def crop_to_circle(img):
     return img
 
 try:
-    source_path = r"C:\Users\Quonote Entreprise\Documents\mydp.jpg"
-    thumb_path = r"c:\Users\Quonote Entreprise\.gemini\antigravity-ide\scratch\portfolio-website\public\profile-thumb.webp"
-
-    img = Image.open(source_path)
-    thumb = crop_to_circle(img)
-    thumb.thumbnail((64, 64))
+    public = r"c:\Users\Quonote Entreprise\.gemini\antigravity-ide\scratch\portfolio-website\public"
     
-    # Save as WebP which supports transparency
-    thumb.save(thumb_path, "WEBP", quality=90)
-    print("Circular thumbnail created successfully!")
+    # === 1. New headshot for Hero ===
+    new_headshot = r"C:\Users\Quonote Entreprise\Documents\385917.jpeg"
+    img = Image.open(new_headshot)
+    # Save full-size hero image as WebP (high quality, optimized)
+    img.save(f"{public}\\headshot.webp", "WEBP", quality=85)
+    print(f"Hero headshot saved ({img.size[0]}x{img.size[1]})")
+    
+    # === 2. Circular thumbnail from new headshot (for navbar/favicon) ===
+    thumb = crop_to_circle(img.copy())
+    thumb.thumbnail((64, 64))
+    thumb.save(f"{public}\\profile-thumb.webp", "WEBP", quality=90)
+    print("Circular thumbnail (64x64) saved")
+    
+    # === 3. Rename existing casual photo for About section ===
+    old_casual = r"C:\Users\Quonote Entreprise\Documents\mydp.jpg"
+    casual = Image.open(old_casual)
+    casual.save(f"{public}\\about-pic.webp", "WEBP", quality=85)
+    print(f"About section photo saved ({casual.size[0]}x{casual.size[1]})")
+    
+    print("\nAll images optimized successfully!")
 except Exception as e:
     print(f"Error: {e}")
