@@ -65,25 +65,25 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-pulse"></span>
-            <span>Available for Enterprise Consultation & Leadership</span>
+            <span>Available to Drive Impact, Consult, and Deliver Innovative Solutions</span>
           </div>
           
-          <h1 className="hero-title reveal active">
+          <h1 className="hero-title reveal">
             Hi, I'm <br />
             <span className="gradient-text">Isah Dickson Godstime</span>
           </h1>
           
-          <div className="hero-subtitle-container reveal active" style={{transitionDelay: '0.1s'}}>
+          <div className="hero-subtitle-container reveal" style={{transitionDelay: '0.1s'}}>
             <span className="hero-subtitle-prefix">I am a </span>
             <span className="hero-subtitle-typed gradient-text-alt" style={{marginLeft: '8px'}}>{currentText}</span>
             <span className="typing-cursor">|</span>
           </div>
           
-          <p className="hero-description reveal active" style={{transitionDelay: '0.2s'}}>
-            Senior IT Professional and Technical Orchestrator with 5+ years of experience building secure, high-availability cloud systems, API frameworks, and enterprise digital insurance platforms. Expert at collaborating with executives to align technical roadmaps with core business growth and deploying custom AI (Hybrid RAG) pipelines.
+          <p className="hero-description reveal" style={{transitionDelay: '0.2s'}}>
+            Senior IT Professional with 5+ years of experience architecting secure cloud infrastructures and deploying custom AI pipelines to drive enterprise growth.
           </p>
           
-          <div className="hero-actions reveal active" style={{transitionDelay: '0.3s'}}>
+          <div className="hero-actions reveal" style={{transitionDelay: '0.3s'}}>
             <a href="#projects" className="btn btn-primary" onClick={handleScrollToProjects}>
               View My Work <ArrowRight size={18} />
             </a>
@@ -93,7 +93,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="hero-visuals reveal active" style={{transitionDelay: '0.4s'}}>
+        <div className="hero-visuals reveal" style={{transitionDelay: '0.4s'}}>
           <div className="headshot-frame animate-float">
             <img 
               src="/profile-pic.webp" 

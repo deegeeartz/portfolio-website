@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
+import StatsBar from './components/StatsBar';
 import TechStack from './components/TechStack';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import Projects from './components/Projects';
@@ -66,6 +68,8 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
+        <StatsBar />
+        <About />
         <TechStack />
         <ExperienceTimeline />
         <Projects />
@@ -73,6 +77,18 @@ function App() {
         <References />
       </main>
       <ContactFooter />
+      
+      <a 
+        href="#home" 
+        className="back-to-top"
+        aria-label="Back to top"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+      </a>
     </div>
   );
 }

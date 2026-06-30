@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 // Custom LinkedIn SVG Icon component to avoid environment dependency export issues
 const Linkedin = ({ size = 20, className }) => (
@@ -51,6 +52,7 @@ const ContactFooter = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const formRef = useRef();
 
   const validate = () => {
     const tempErrors = {};
@@ -84,12 +86,30 @@ const ContactFooter = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1500);
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+
+    if (serviceId === 'YOUR_SERVICE_ID') {
+      console.warn("EmailJS credentials not found in environment variables. Simulating submission.");
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }, 1500);
+      return;
+    }
+
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
+      .then((result) => {
+          setIsSubmitting(false);
+          setIsSuccess(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+      }, (error) => {
+          console.error("EmailJS Error:", error.text);
+          setIsSubmitting(false);
+          alert("Failed to send message. Please check the console or email directly.");
+      });
   };
 
   return (
@@ -109,9 +129,9 @@ const ContactFooter = () => {
               <div className="contact-detail-icon">
                 <MapPin size={18} />
               </div>
-              <div className="contact-detail-text">
-                <span className="detail-label">Location</span>
-                <span className="detail-value">Lagos, Nigeria (Open to Global Remote)</span>
+              <div className="contact-detail-text" style={{display: 'flex', flexDirection: 'column'}}>
+                <span className="detail-label" style={{fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Location</span>
+                <span className="detail-value" style={{fontWeight: 500}}>Lagos, Nigeria (Open to Global Remote)</span>
               </div>
             </div>
 
@@ -119,9 +139,9 @@ const ContactFooter = () => {
               <div className="contact-detail-icon">
                 <Mail size={18} />
               </div>
-              <div className="contact-detail-text">
-                <span className="detail-label">Email Address</span>
-                <span className="detail-value">dickson.isah@outlook.com</span>
+              <div className="contact-detail-text" style={{display: 'flex', flexDirection: 'column'}}>
+                <span className="detail-label" style={{fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Email Address</span>
+                <span className="detail-value" style={{fontWeight: 500}}>dickson.isah@outlook.com</span>
               </div>
             </a>
 
@@ -129,9 +149,9 @@ const ContactFooter = () => {
               <div className="contact-detail-icon">
                 <Phone size={18} />
               </div>
-              <div className="contact-detail-text">
-                <span className="detail-label">Phone Number</span>
-                <span className="detail-value">+234 816 294 1439</span>
+              <div className="contact-detail-text" style={{display: 'flex', flexDirection: 'column'}}>
+                <span className="detail-label" style={{fontSize: '0.85rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em'}}>Phone Number</span>
+                <span className="detail-value" style={{fontWeight: 500}}>+234 816 294 1439</span>
               </div>
             </a>
           </div>
@@ -150,7 +170,7 @@ const ContactFooter = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="https://github.com/Quonote-Digital" 
+                href="https://github.com/deegeeartz" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="social-btn github-btn"
@@ -180,7 +200,7 @@ const ContactFooter = () => {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} noValidate>
+            <form ref={formRef} onSubmit={handleSubmit} noValidate>
               <h3 className="form-title" style={{marginBottom: '2rem'}}>Send an Inquiry</h3>
               
               <div className="form-group">
